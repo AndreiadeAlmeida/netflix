@@ -5,9 +5,10 @@ import 'normalize.css';
 import App from './app';
 import { GlobalStyles } from './global-styles';
 
-ReactDOM.render(<>
+ReactDOM.render(
+  <>
     <GlobalStyles />
     <App />
-    </>, 
-    document.getElementById('root'));
-
+  </>,
+  document.getElementById('root')
+);

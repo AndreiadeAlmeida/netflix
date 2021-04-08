@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components/macro';
 
+// eslint-disable-next-line import/prefer-default-export
 export const GlobalStyles = createGlobalStyle`
     html, body {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
