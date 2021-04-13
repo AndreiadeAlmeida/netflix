@@ -1,4 +1,5 @@
 export { default as Header } from './header/index';
+export { default as Form } from './form/index';
 export { default as Feature } from './feature/feature';
 export { default as Jumbotron } from './jumbotron/jumbotron';
 export { default as Accordion } from './accordion/accordion';
