@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { HeaderContainer }  from '../containers/header';
+import { FooterContainer } from '../containers/footer';
 
 function Signin() {
     return (
-        <p>
-            Hello from the sign up!
-        </p>
+        <>
+            <HeaderContainer>Hello from the sign up!</HeaderContainer>
+            <FooterContainer></FooterContainer>
+        </>
     )
 }
 
