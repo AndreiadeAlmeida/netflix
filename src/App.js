@@ -3,21 +3,43 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Home, Browse, Signin, Signup, } from './pages'
 import * as ROUTES from './constants/routes';
+import { IsUserRedirect , ProtectedRoute } from './helpers/routes';
 
 function App() {
+  const user = {};
+
   return <Router>
-    <Route exact path="/browse">
-      <Browse />
-    </Route>
     <Route exact path="/signin">
-      <Signin />
+      <IsUserRedirect 
+        user={user} 
+        loggedInPath={ROUTES.BROWSE} 
+        path={ROUTES.SIGN_IN}
+        exact
+      >
+        <Signin />
+      </IsUserRedirect>
     </Route>
     <Route exact path="/signup">
-      <Signup />
+      <IsUserRedirect 
+        user={user} 
+        loggedInPath={ROUTES.BROWSE} 
+        path={ROUTES.SIGN_UP}
+        exact
+      >
+        <Signup />
+      </IsUserRedirect>
     </Route>
-    <Route exact path={ROUTES.HOME}>
+
+    <ProtectedRoute user={user} path={ROUTES.BROWSE} exact>
+      <Browse />
+    </ProtectedRoute>
+    <IsUserRedirect 
+      user={user} 
+      loggedInPath={ROUTES.BROWSE}
+      path={ROUTES.HOME}
+    >
       <Home />
-    </Route>
+    </IsUserRedirect>
   </Router>;
 }
 
