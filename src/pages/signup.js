@@ -6,7 +6,7 @@ import { Form }  from '../components/index';
 import { FooterContainer } from '../containers/footer';
 import * as ROUTES from '../constants/routes';
 
-function Signup() {
+function SignUp() {
     const history = useHistory();
     const { firebase } = useContext(FirebaseContext);
 
@@ -80,4 +80,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default SignUp;
