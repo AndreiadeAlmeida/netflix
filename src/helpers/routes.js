@@ -7,13 +7,14 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest}) {
             {...rest}
             render={() => {
               if(!user){
-                return children;
+                return children; // return signin page
                 }
               if (user) {
+                console.log(loggedInPath);
                 return (
                   <Redirect
                     to={{ 
-                      pathname: loggedInPath
+                      pathname: loggedInPath // redirect to the logged in path
                     }}
                   />
                 );
@@ -24,13 +25,15 @@ export function IsUserRedirect({ user, loggedInPath, children, ...rest}) {
     );
 }
 
+
+// only people who are signup can access this pages
 export function ProtectedRoute({user, children, ...rest}) {
     return (
         <Route 
             {...rest}
             render={({location}) => {
                 if(user) {
-                    return children
+                    return children // if I have a rotective route and there's a user show the browse page
                 }
 
                 if (!user) {
@@ -43,6 +46,8 @@ export function ProtectedRoute({user, children, ...rest}) {
                     />
                   )
                 }
+
+                return null;
             }}
         />
     )
