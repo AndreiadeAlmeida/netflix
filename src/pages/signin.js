@@ -14,8 +14,6 @@ function SignIn() {
     const [error, setError] = useState('');
   
     const isInvalid = password === '' || emailAddress === '';
-    console.log(!isInvalid);
-    console.log(error);
 
     const handleSignIn = (e) => {
         e.preventDefault();
