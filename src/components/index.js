@@ -7,3 +7,6 @@ export { default as Accordion } from './accordion/accordion';
 export { default as Footer } from './footer/footer';
 export { default as OptForm } from './optForm/index';
 export {default as Loading} from './loading';
+export {default as Card} from './card';
+export {default as Player} from './player/index';
+
